@@ -23,15 +23,15 @@ import: NAME MYSQL_PASS mysqlimport
 prod: NAME MYSQL_DATADIR MYSQL_PASS rm mysqlcid
 
 kill:
-	-@docker kill `cat cid`
+	-@docker kill `cat mysqlcid`
 
 rm-image:
-	-@docker rm `cat cid`
-	-@rm cid
+	-@docker rm `cat mysqlcid`
+	-@rm mysqlcid
 
 rm: kill rm-image
 
-clean: rm
+clean: rmall
 
 enter:
 	docker exec -i -t `cat mysqlcid` /bin/bash
