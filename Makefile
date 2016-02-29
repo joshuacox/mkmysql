@@ -13,7 +13,10 @@ help:
 	@echo ""   3. make logs      - follow the logs of docker container
 
 # run a  container that requires mysql temporarily
-temp: NAME MYSQL_PASS rm build mysqltemp
+temp: NAME MYSQL_PASS rm mysqltemp
+
+# import
+import: NAME MYSQL_PASS mysqlimport
 
 # run a  container that requires mysql in production with persistent data
 # HINT: use the grabmysqldatadir recipe to grab the data directory automatically from the above runmysqltemp
