@@ -88,7 +88,7 @@ mysqlimport:
 	--cidfile="mysqltemp" \
 	--name `cat NAME`-mysqltemp \
 	-e MYSQL_ROOT_PASSWORD=`cat MYSQL_PASS` \
-	-v ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d \
+	-v `pwd`/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d \
 	-d \
 	mysql:5.6
 
